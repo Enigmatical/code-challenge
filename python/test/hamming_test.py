@@ -55,6 +55,10 @@ class HammingTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             hamming.compute('ATA', 'AGTG')
 
+    def test_disallow_strand_missing(self):
+        with self.assertRaises(NameError):
+            hamming.compute('AGGAC')
+
 
 if __name__ == '__main__':
     unittest.main()
