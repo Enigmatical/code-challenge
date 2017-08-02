@@ -10,7 +10,7 @@ class Hamming {
 
   compute(dna1, dna2) {
     // Added a test to ensure both inputs are provided
-    if (!dna1 || !dna2) {
+    if (typeof dna1 === 'undefined' || typeof dna2 === 'undefined') {
       throw 'Two DNA strands are required.';
     }
 

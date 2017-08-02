@@ -16,6 +16,10 @@ describe('Hamming', function () {
     expect(hamming.compute('AG','CT')).to.equal(2);
   });
 
+  it('complete hamming distance for empty strands', function() {
+    expect(hamming.compute('', '')).to.equal(0);
+  });
+
   it('small hamming distance', function () {
     expect(hamming.compute('AT','CT')).to.equal(1);
   });
@@ -37,6 +41,6 @@ describe('Hamming', function () {
   });
 
   it('throws error when two strands are not provided', function() {
-    expect(function() { hamming.compute('AGGAC', ''); }).to.throw('Two DNA strands are required.');
+    expect(function() { hamming.compute('AGGAC'); }).to.throw('Two DNA strands are required.');
   });
 });
